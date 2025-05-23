@@ -5,9 +5,11 @@
 --Delete "s" keymap from LazyVim
 vim.keymap.del("n", "s")
 
-vim.keymap.set("n", "<leader>th", function()
+vim.keymap.set("n", "<F7>", function()
   vim.cmd([[ToggleTerm]])
 end, { desc = "Open terminal" })
+
+vim.keymap.set("n", "<leader>w", ":w<CR>", { noremap = true, silent = true, desc = "Save file" })
 
 -- stylua: ignore start
 vim.keymap.set({ "n", "v" }, "<F5>", function() require("dap").continue() end, { desc = "Continue" })
